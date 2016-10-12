@@ -1,0 +1,524 @@
+{
+
+	"ano" : {
+		"original" : null,
+		"type" : "INTEGER"
+	},
+
+	"estado" : {
+		"original" : null,
+		"type" : "INTEGER"
+	},
+
+	"municipio": {
+		"original" : [ 
+			"Município",
+			"MUNICIPIO"
+		],
+		"type" : "INTEGER"
+	},
+	
+	"cnae_95_classe" : {
+		"original" : [
+			"CNAE 95 Classe",
+			"CLAS CNAE 95" 
+		],
+		"type" : "INTEGER"
+	},
+
+	"vinculo_ativo_3112" : {
+		"original" : [ 
+			"Vínculo Ativo 31/12",
+			"EMP EM 31/12"
+		],
+		"type" : "BOOLEAN"
+	},
+
+	"tipo_vinculo" : {
+		"original" : [ 
+			"Tipo Vínculo",
+			"TP VINCL",
+			"TP VINCULO"
+		],
+		"type" : "INTEGER"
+	}, 
+
+	"motivo_desligamento" : {
+		"original" : [ 
+			"Motivo Desligamento",
+			"CAUSA DESLI"
+		],
+		"type" : "INTEGER"
+	},
+
+	"mes_desligamento" : {
+		"original" : [ 
+			"Mês Desligamento",
+			"MES DESLIG" 
+		],
+		"type" : "INTEGER"
+	},	
+
+	"ind_vinculo_alvara" : {
+ 		"original" : [ 
+ 			"Ind Vínculo Alvará",
+ 			"IND ALVARA"
+ 		],
+ 		"type" : "INTEGER"
+ 	},
+
+	"tipo_admissao" : {
+ 		"original" : [ 
+ 			"Tipo Admissão",
+ 			"TIPO ADM"
+ 		],
+ 		"type" : "INTEGER"
+ 	},
+
+	"tipo_salario" : {
+ 		"original" : [ 
+ 			"Tipo Salário",
+ 			"TIPO SAL" 
+ 		],
+ 		"type" : "INTEGER"
+ 	},
+
+	"cbo_94_ocupacao" : {
+ 		"original" : [ 
+ 			"CBO 94 Ocupação",
+ 			"CBO Ocupação",
+ 			"OCUPACAO",
+ 			"OCUPACAO 94" 
+ 		],
+ 		"type" : "INTEGER"
+ 	},
+
+	"escolaridade_apos_2005" : {
+ 		"original" : [
+ 			"Escolaridade após 2005",
+ 			"GR INSTRUCAO",
+ 			"GRAU INSTR",
+ 			"Grau Instrução 2005-1985"
+ 		],
+ 		"type" : "INTEGER"
+ 	},
+
+	"sexo_trabalhador" : {
+ 		"original" : [
+ 			"Sexo Trabalhador",
+ 			"SEXO",
+ 			"GENERO"
+ 		],
+ 		"type" : "INTEGER"
+ 	},
+
+	"nacionalidade" : {
+ 		"original" : [ 
+ 			"Nacionalidade",
+ 			"NACIONALIDAD" 
+ 		],
+ 		"type" : "INTEGER"
+ 	},
+
+	"raca_cor": {
+		"original" : [ 
+			"Raça Cor",
+			"RACA_COR" 
+		],
+		"type" : "INTEGER"
+	},
+
+	"ind_portador_defic" : {
+		"original" : [ 
+			"Ind Portador Defic",
+			"PORT DEFIC" 
+		],
+		"type" : "BOOLEAN"
+	},
+
+	"tamanho_estabelecimento" : {
+ 		"original" : [
+ 			"Tamanho Estabelecimento",
+ 			"TAMESTAB"
+ 		],
+ 		"type" : "INTEGER"
+ 	},
+
+	"natureza_juridica": {
+		"original" : [
+			"Natureza Jurídica",
+			"NATUR JUR",
+			"NAT JURIDICA"
+		],
+		"type" : "INTEGER"
+	},
+
+	"ind_cei_vinculado": {
+		"original" : [
+			"Ind CEI Vinculado",
+			"IND CEI VINC"
+		],
+		"type" : "BOOLEAN"
+	},
+
+	"tipo_estab": {
+		"original" : [
+			"Tipo Estab",
+			"TIPO ESTBL",
+			"TIPO ESTB ID"
+		],
+		"type" : "INTEGER"
+	},
+
+	"ind_estab_participa_pat": {
+		"original" : [
+			"Ind Estab Participa PAT",
+			"IND PAT"
+		],
+		"type" : "BOOLEAN"
+	},
+
+	"ind_simples": {
+		"original" : [
+			"Ind Simples",
+			"IND SIMPLES"
+		],
+		"type" : "BOOLEAN"
+	},
+
+	"data_admissao_declarada": {
+		"original" : [ 
+			"Data Admissão Declarada",
+			"DT ADMISSAO",
+			"Mês Admissão"
+		],
+		"type" : "DATE"
+	},
+
+	"mes_admissao_declarada": {
+		"original" : null,
+		"type" : "INTEGER"
+	},
+
+	"vl_remun_media_nom": {
+		"original" : [
+			"Vl Remun Média Nom",
+			"REM MED (R$)"
+		],
+		"type" : "DECIMAL"
+	},
+
+	"vl_remun_media_sm": {
+		"original" : [
+			"Vl Remun Média (SM)",
+			"REM MEDIA"
+		],
+		"type" : "DECIMAL"
+	},
+
+	"vl_remun_dezembro_nom": {
+		"original" : [
+			"Vl Remun Dezembro Nom",
+			"REM DEZ (R$)"
+		],
+		"type" : "DECIMAL"
+	},
+
+	"vl_remun_dezembro_sm": {
+		"original" : [
+			"Vl Remun Dezembro (SM)",
+			"REM DEZEMBRO"
+		],
+		"type" : "DECIMAL"
+	},
+
+	"tempo_emprego": {
+		"original" : [
+			"Tempo Emprego",
+			"TEMP EMPR"
+		],
+		"type" : "DECIMAL"
+	},
+
+	"qtd_hora_contr": {
+		"original" : [
+			"Qtd Hora Contr",
+			"HORAS CONTR"
+		],
+		"type" : "INTEGER"
+	},
+
+	"vl_ultima_remuneracao_ano": {
+		"original" : [
+			"Vl Última Remuneração Ano",
+			"ULT REM"
+		],
+		"type" : "DECIMAL"
+	},
+
+	"vl_salario_contratual": {
+		"original" : [
+			"Vl Salário Contratual",
+			"SAL CONTR"
+		],
+		"type" : "DECIMAL"
+	},
+
+	"pis": {
+		"original" : [
+			"PIS"
+		],
+		"type" : "STRING"
+	},
+
+	"numero_ctps": {
+		"original" : [
+			"Número CTPS",
+			"NUM CTPS",
+			"NUME CTPS"
+		],
+		"type" : "STRING"
+	},
+
+	"cpf": {
+		"original" : [
+			"CPF"
+		],
+		"type" : "STRING"
+	},
+
+	"dt_nascimento" : {
+		"original" : [
+			"DT NASCIMENT"
+		],
+		"type" : "DATE"
+	},
+
+	"cei_vinculado": {
+		"original" : [
+			"CEI Vinculado",
+			"CEI VINC"
+		],
+		"type" : "STRING"
+	},
+
+	"cnpj_cei": {
+		"original" : [
+			"CNPJ / CEI",
+			"IDENTIFICAD"
+		],
+		"type" : "STRING"
+	},
+
+	"cnpj_raiz": {
+		"original" : [
+			"CNPJ Raiz",
+			"RADIC CNPJ"
+		],
+		"type" : "STRING"
+	},
+
+	"nome_trabalhador": {
+		"original" : [
+			"Nome Trabalhador",
+			"NOME"
+		],
+		"type" : "STRING"
+	},
+
+	"cbo_ocupacao_2002": {
+		"original" : [
+			"CBO Ocupação 2002",
+			"OCUP 2002"
+		],
+		"type" : "INTEGER"
+	},
+
+	"cnae_2_classe": {
+		"original" : [ 
+			"CNAE 2.0 Classe",
+			"CLAS CNAE 20"
+		],
+		"type" : "STRING"
+	},
+
+	"cnae_2_subclasse": {
+		"original" : [ 
+			"CNAE 2.0 Subclasse",
+			"SB CLAS 20"
+		],
+		"type" : "STRING"
+	},
+
+	"tipo_defic": {
+		"original" : [
+			"Tipo Defic",
+			"TP DEFIC"
+		],
+		"type" : "INTEGER"
+	},
+
+	"dia_desligamento" : {
+		"original" : [
+			"DIA DESL"
+		],
+		"type" : "INTEGER"
+	},
+
+	"causa_afastamento_1": {
+		"original" : [ 
+			"Causa Afastamento 1",
+			"CAUS AFAST 1"
+		],
+		"type" : "INTEGER"
+	},
+
+	"dia_ini_af1": {
+		"original" : [
+			"Dia Ini AF1",
+			"DIA INI AF 1"
+		],
+		"type" : "INTEGER"
+	},
+
+	"mes_ini_af1": {
+		"original" : [
+			"Mês Ini AF1",
+			"MES INI AF 1"
+		],
+		"type" : "INTEGER"
+	},
+
+	"dia_fim_af1": {
+		"original" : [
+			"Dia Fim AF1",
+			"DIA FIM AF 1"
+		],
+		"type" : "INTEGER"
+	},
+
+	"mes_fim_af1": {
+		"original" : [
+			"Mês Fim AF1",
+			"MES FIM AF 1"
+		],
+		"type" : "INTEGER"
+	},
+
+	"causa_afastamento_2": {
+		"original" : [
+			"Causa Afastamento 2",
+			"CAUS AFAST 2"
+		],
+		"type" : "INTEGER"
+	},
+
+	"dia_ini_af2": {
+		"original" : [
+			"Dia Ini AF2",
+			"DIA INI AF 2"
+		],
+		"type" : "INTEGER"
+	},
+
+	"mes_ini_af2": {
+		"original" : [
+			"Mês Ini AF2",
+			"MES INI AF 2"
+		],
+		"type" : "INTEGER"
+	},
+
+	"dia_fim_af2": {
+		"original" : [
+			"Dia Fim AF2",
+			"DIA FIM AF 2"
+		],
+		"type" : "INTEGER"
+	},
+
+	"mes_fim_af2": {
+		"original" : [
+			"Mês Fim AF2",
+			"MES FIM AF 2"
+		],
+		"type" : "INTEGER"
+	},
+
+	"causa_afastamento_3": {
+		"original" : [
+			"Causa Afastamento 3",
+			"CAUS AFAST 3"
+		],
+		"type" : "INTEGER"
+	},
+
+	"dia_ini_af3": {
+		"original" : [
+			"Dia Ini AF3",
+			"DIA INI AF 3"
+		],
+		"type" : "INTEGER"
+	},
+
+	"mes_ini_af3": {
+		"original" : [
+			"Mês Ini AF3",
+			"MES INI AF 3"
+		],
+		"type" : "INTEGER"
+	},
+
+	"dia_fim_af3": {
+		"original" : [
+			"Dia Fim AF3",
+			"DIA FIM AF 3"
+		],
+		"type" : "INTEGER"
+	},
+
+	"mes_fim_af3": {
+		"original" : [
+			"Mês Fim AF3",
+			"MES FIM AF 3"
+		],
+		"type" : "INTEGER"
+	},
+
+	"qtd_dias_afastamento": {
+		"original" : [
+			"Qtd Dias Afastamento",
+			"QT DIAS AFAS"
+		],
+		"type" : "INTEGER"
+	},
+
+	"ibge_subsetor" : {
+		"original" : [
+			"IBGE Subsetor"
+		],
+		"type" : "INTEGER"
+	},
+
+	"ibge_atividade" : {
+		"original" : [
+			"IBGE Atividade"
+		],
+		"type" : "INTEGER"
+	},
+
+	"idade" : {
+		"original" : [
+			"Idade"
+		],
+		"type" : "INTEGER"
+	},
+
+	"faixa_etaria" : {
+		"original" : [
+			"Faixa Etária"
+		],
+		"type" : "INTEGER"
+	}
+
+}
