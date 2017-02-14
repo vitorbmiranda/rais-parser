@@ -29,7 +29,7 @@ for entry in `ls $1 | grep -i ".txt"`; do
 	echo "${i}/${total} - ${entry} "
 	echo "${lines} lines total"
 
-	node rais_parser.js --max-old-space-size=2048 --file=${the_file} --year=${2}
+	node rais_parser.js --max-old-space-size=4098 --file=${the_file} --year=${2}
 
 	end_time=`date +%s`
 	exec_time=`expr $end_time - $start_time`

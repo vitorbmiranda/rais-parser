@@ -7,16 +7,18 @@ const cvsParser = require('./parser/csv_parser.js');
 /**
 	Go!
 */
-exports.go = function(file, year) {
+exports.go = function(file, year, done) {
 
 	initializeLodash();
 
-	db.initDb((definition) => {
+	db.initDb((seq, definition) => {
 
         cvsParser.parseAndInsert(definition, file, year, () => {
             console.log(`SUCCESS - Finished ${file}`);
+            done(seq);
         }, (err) => {
             console.log(`ERROR - ${err}`);
+            done(seq);
         });
 
     });

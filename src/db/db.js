@@ -21,7 +21,7 @@ exports.initDb = function(callback) {
 
 	// sync with db
 	SeqWorkerMigration.sync({force: false}).then(function() {
-		callback(SeqWorkerMigration);
+		callback(seq, SeqWorkerMigration);
 	}).catch((err) => {
   	console.log(err);
   });;
@@ -45,7 +45,7 @@ function redefineTypes(header) {
 function initSequelize() {
 
 	return new Sequelize('rais', 'rais', 'rais#1', {
-  	host: '192.168.0.6',
+  	host: '192.168.0.5',
   	dialect: 'postgres',
   	logging: false,
 

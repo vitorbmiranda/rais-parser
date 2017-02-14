@@ -46,9 +46,10 @@ exports.parseAndInsert = function(definition, file, year, success, error) {
 				let record = definition.build(workerMigration.record);
 
 			 	record.save().then((worker) => {
-			  	// ble
+			 		//console.log("Salvou: " + JSON.stringify(worker));
 			  }).catch((err) => {
-			  	error(err);
+			  	console.log("Erro ao salvar no banco - " + err);
+			  	//error(err);
 			  });
 
 			}))
@@ -101,12 +102,17 @@ function defineCSVParser(header) {
 	const parser = csvParse({
 		delimiter: ';',
 		columns: headerFunction,
-		trim: true
+		trim: true,
+		relax_column_count: true,
+		skip_empty_lines: true
 	});
 
 	parser.on('error', function(err){
+		console.log("oiQ0239U9T912");
 		console.log(err);
+		console.log("2193080192720821309832");
 	});
+
 
 	return parser;
 

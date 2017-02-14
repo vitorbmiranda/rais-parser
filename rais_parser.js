@@ -10,4 +10,8 @@ if (argv.year == null) {
   throw 'Year argument not found'
 }
 
-main.go(argv.file, argv.year);
+main.go(argv.file, argv.year, (seq) => {
+	console.log('Main finished');
+	seq.close();
+	process.exit(0);
+});
