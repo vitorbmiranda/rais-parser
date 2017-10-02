@@ -1,66 +1,65 @@
 #!/bin/bash
-echo
 
-while test $# -gt 0; do
-  case "$1" in
+if [[ -z "$1" || -z "$2" ]]; then
+	echo "Arquivo/linhas nao informado!"
+	exit 1
+fi
 
-    -f|--file)
-    shift
-    if test $# -gt 0; then
-      FILE=$1
-    else
-      echo "ERRO: -f Arquivo nao especificado"
-      echo
-      exit 1
-    fi
+FILE_PATH=$1
+LINES_COUNT=$2
 
-    # pega a primeira linha do arquivo
-    FIRST_LINE=$(head -n 1 $FILE)
+if [ ! -f "$FILE_PATH" ]; then
+	echo "Arquivo $FILE_PATH nao encontrado!"
+	exit 1
+fi
 
-    # variavel pra pular a primeira linha
-    IS_FIRST=true
+# diretorio do arquivo
+FILE_DIR=$(dirname $FILE_PATH)
+echo "FILE_DIR: $FILE_DIR"
 
-    MUNI_REGEX="^([0-9]{6}).*$"
+# nome do arquivo
+FILE_NAME=$(basename $FILE_PATH)
+echo "FILE_NAME: $FILE_NAME"
 
-    while IFS= read -r LINE
-    do
+# nome do arquivo sem extensão
+FILE_BASE_NAME="${FILE_NAME%.*}"
+echo "FILE_BASE_NAME: $FILE_BASE_NAME"
 
-      if [ "$IS_FIRST" = true ] ; then 
-        
-        # pega a o município
-        if [[ $LINE =~ $MUNI_REGEX ]]; then
-          
-          # aqui passa pra variável depois do match
-          MUNI="${BASH_REMATCH[1]}"
+# navega para o diretorio
+cd $FILE_DIR
+ORIGINAL_LINE_COUNT=`wc -l < $FILE_NAME`
 
-          # nome = arquivo original + muni
-          MUNI_FILE_NAME="${FILE}-${MUNI}.txt"
+# pega o cabeçalho do arquivo
+HEADER=`head -n 1 $FILE_NAME`
+echo "HEADER: $HEADER"
+echo "ORIGINAL_LINE_COUNT: $ORIGINAL_LINE_COUNT"
 
-          # se não existe o arquivo ainda, cria com o header
-          if [ ! -f "$MUNI_FILE_NAME" ]; then
-            echo $FIRST_LINE > $MUNI_FILE_NAME
-          fi
+# remove a primeira linha senao o primeiro split fica com dois cabeçalhos 
+sed '1d' $FILE_NAME > temp.tmp && mv temp.tmp $FILE_NAME
 
-          echo $LINE >> $MUNI_FILE_NAME
-          
-        fi
+# faz o split usando o template do nome do arquivo
+split -l $LINES_COUNT $FILE_NAME $FILE_BASE_NAME
 
-      else
-        IS_FIRST=false  
-      fi
+# volta o header pro arquivo original
+echo $HEADER | cat - $FILE_NAME > temp.tmp && mv temp.tmp $FILE_NAME
 
-    done < "$FILE"
+# renomeia o arquivo original e move pra pasta anterior
+mv $FILE_NAME ../${FILE_NAME}.splitted
 
-    shift
-    ;;
-
-    *)
-      echo "Opcao invalida: $1"
-      exit 1
-      break
-      ;;
-    
-  esac
+# renomeia os splits pra .TXT e acrescenta o header
+for F in *
+do
+	echo $F
+	echo $HEADER | cat - $F > temp.tmp && mv temp.tmp $F
+	mv $F $F.TXT
+	F=$F.TXT
+	echo "* file: $F"
+	LINE_COUNT=`wc -l < $F`
+	echo "* line count: $LINE_COUNT"
+	echo
 done
 
-echo
+
+
+
+
