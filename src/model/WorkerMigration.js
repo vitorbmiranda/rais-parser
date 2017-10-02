@@ -221,16 +221,17 @@ class WorkerMigration {
 
 	toInt(s) {
 		if (s == null) return null;
-		let i = parseInt(s);
-		if (isNaN(i)) {
+		if (isNaN(s)) {
 			return null;
 		}
+		let i = parseInt(s);
 		return i;
 	}
 
 	toDate(s) {
 		let i = this.toInt(s);
-		if (i == null || isNaN(i)) return null;
+
+		if (i == null) return null;
 
 		if (s.length == 7) {
 			s = `0${s}`;
